@@ -35,11 +35,10 @@ class CarModel(models.Model):
         ("SUV", "SUV"),
         ("WAGON", "Wagon")
     ]
-    make = models.ForeignKey(CarMake, on_delete=models.CASCADE)
-    dealer = models.IntegerField()
+    car_make = models.ForeignKey(CarMake, on_delete=models.CASCADE)
     name = models.CharField(max_length=64)
     type = models.CharField(max_length=16, choices=CAR_TYPES, default="SUV")
-    year = models.DateField(default=2023, validators=[
+    year = models.IntegerField(default=2023, validators=[
         MaxValueValidator(2023),
         MinValueValidator(2015)
     ])
