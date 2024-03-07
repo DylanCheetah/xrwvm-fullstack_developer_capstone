@@ -9,14 +9,17 @@ class CarModelInline(admin.StackedInline):
     model = CarModel
     extra = 5
 
+
 # CarModelAdmin class
 class CarModelAdmin(admin.ModelAdmin):
     list_display = ["name"]
+
 
 # CarMakeAdmin class with CarModelInline
 class CarMakeAdmin(admin.ModelAdmin):
     list_display = ["name"]
     inlines = [CarModelInline]
+
 
 # Register models here
 admin.site.register(CarMake, CarMakeAdmin)
