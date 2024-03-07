@@ -16,7 +16,6 @@ def initiate():
             CarMake.objects.create(name=data['name'],
                                    description=data['description']))
 
-
     # Create CarModel instances with the corresponding CarMake instances
     car_model_data = [
       {
