@@ -10,7 +10,7 @@ import json
 from django.views.decorators.csrf import csrf_exempt
 from .populate import initiate
 from .models import CarMake, CarModel
-from .restapis import (get_request, analyze_review_sentiments, 
+from .restapis import (get_request, analyze_review_sentiments,
                        post_review, searchcars_request)
 
 
@@ -177,7 +177,7 @@ def get_inventory(request, dealer_id):
             endpoint = "/carsbymodel/" + str(dealer_id) + "/" + data['model']
 
         elif 'mileage' in data:
-            endpoint = ("/carsbymaxmileage/" + str(dealer_id) + "/" + 
+            endpoint = ("/carsbymaxmileage/" + str(dealer_id) + "/" +
                         data['mileage'])
 
         elif 'price' in data:
